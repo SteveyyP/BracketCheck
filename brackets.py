@@ -35,7 +35,12 @@ def brackets(equation):
         # If yes, continue, 
         # Else return Unbalanced
         if i in closing:
+            # Check if stack has 1 or more items in it
             if len(stack) >= 1:
+                
+                # Iterate to see which bracket we have
+                # If closing bracket corresponds to opening bracket
+                # Pop from stack, Else return 'Unbalanced'
                 if i == closing[0]:
                     if '0' in stack:
                         stack.pop(stack.index('0'))
@@ -51,6 +56,7 @@ def brackets(equation):
                         stack.pop(stack.index('2'))
                     else:
                         return 'Unbalanced'
+            # If stack has less than 1 item, return 'Unbalanced'
             else:
                 return 'Unbalanced'
 
